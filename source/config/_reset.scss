@@ -1,0 +1,85 @@
+@use 'variaveis';
+@import 'mixins';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  color: variaveis.$black-color;
+  background: rgba(variaveis.$primary-color-variant, 0.1);
+  user-select: none;
+}
+
+.container {
+  width: variaveis.$container-lg;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2;
+}
+
+section {
+  margin-top: 6rem;
+
+  & > h2 {
+    text-align: center;
+  }
+
+  & > p {
+    text-align: center;
+    width: 42%;
+    margin: 0.6rem auto 2.5rem;
+  }
+}
+
+.btn {
+  @include button();
+}
+
+.btn-primary {
+  @include button(variaveis.$white-color, variaveis.$primar-color);
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: variaveis.$conatiner-md;
+  }
+
+  section {
+    & > p {
+      width: 55%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    & > p {
+      width: variaveis.$conatiner-md;
+    }
+  }
+}
